@@ -12,7 +12,7 @@ This repo clones the org and records where each platform runs. It does not creat
 | RunPod | GPU bursts when credits are already on the account | A standing GPU pool |
 | Dex | Sign-in. The issuer URL is set at install time and must match the UI | A hosted identity product on this repo |
 | Stripe | Payment only when a secret key and a price id are set outside this repo | A price list. This repo does not charge a card |
-| GitLab CE on our own cluster | Internal git and the runner named warble-frakma | Required CI, and not a GitLab.com Premium seat. The cost note is below |
+| GitHub org and GitHub packages | Source, CI, and container packages | A second Git host. GitLab CE was removed from the control cluster on 14 October 2026 |
 
 ## Dex issuer
 
