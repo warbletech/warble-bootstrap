@@ -1,10 +1,13 @@
-# Where things run
+﻿# Where things run
 
 This repo clones the org and records where each platform runs. It does not create a cloud account.
 
 | Platform | What it is for | What it is not |
 | --- | --- | --- |
 | This repository | Org clone script and this map | A cluster or a product runtime |
+| [warble-idp-portal](https://github.com/warbletech/warble-idp-portal) (idp.warblecloud.com) | Internal Developer Platform, Golden-Path service catalog, and Argo CD fleet deployer | A public marketing site |
+| [warble-saas-marketplace](https://github.com/warbletech/warble-saas-marketplace) (pp.warblecloud.com) | Commercial SaaS portal, Stripe subscriptions/financing, Murmuration checkout, and MCP credit metering | A Kubernetes operator runtime |
+| [warble-founders-gtm](https://github.com/warbletech/warble-founders-gtm) (warblecloud.com) | Founders Office GTM hub, Fitment Quiz & CFO ROI Calculator, battlecards, and launch playbooks | A cluster control plane |
 | [warble-harness](https://github.com/warbletech/warble-harness) on Rancher Desktop or k3s | Local Reflexion and Avirka loop | A customer cluster |
 | GitHub Actions | CI for warbletech repositories | A second required gate |
 | Railway | Community site warbleoss.org and the read-only MCP at mcp.warbleoss.org | The enterprise sign-in |
@@ -41,3 +44,4 @@ For five people, 3,000 private Linux minutes, and 10 GB of packages, GitHub Team
 ```
 
 The script groups repositories into `enterprise/`, `oss/`, `products/`, and `internal/` under `~/warble-enterprise`.
+
