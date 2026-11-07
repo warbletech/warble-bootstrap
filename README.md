@@ -11,7 +11,14 @@ This repository does not install a cluster. The Rancher Desktop / k3s model stac
 ./scripts/clone-warbletech.sh
 ```
 
-The script writes `~/warble-enterprise`. A checkout at the root of that folder can also run `./clone-warbletech.sh`, which calls this script.
+On Windows PowerShell:
+
+```powershell
+.\scripts\clone-warbletech.ps1 -List
+.\scripts\clone-warbletech.ps1
+```
+
+The script writes `~/warble-enterprise`. A checkout at the root of that folder can also run `./clone-warbletech.sh`, which calls this script. `--list` / `-List` only writes an index; it does not clone.
 
 ## Platforms
 

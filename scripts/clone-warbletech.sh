@@ -62,6 +62,9 @@ group_for() {
     starling-ex|starling-ex-community)
       echo enterprise
       ;;
+    warble-idp-portal|warble-saas-marketplace|warble-founders-gtm)
+      echo internal
+      ;;
     ananta|aviika-llm|avinizer.tech|chirp-ccp|chirpstack-gatesay|cityguide|drona-edtech|petrol-pump-mvp|pramana|surveillance-mvp|warble-future)
       echo products
       ;;
