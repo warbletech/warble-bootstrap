@@ -6,7 +6,7 @@ This repo clones the org and records where each platform runs. It does not creat
 | --- | --- | --- |
 | This repository | Org clone script and this map | A cluster or a product runtime |
 | [warble-idp-portal](https://github.com/warbletech/warble-idp-portal) (idp.warblecloud.com) | Internal Developer Platform, Golden-Path service catalog, and Argo CD fleet deployer | A public marketing site |
-| [warble-saas-marketplace](https://github.com/warbletech/warble-saas-marketplace) (pp.warblecloud.com) | Commercial SaaS portal, Stripe subscriptions/financing, Murmuration checkout, and MCP credit metering | A Kubernetes operator runtime |
+| [warble-saas-marketplace](https://github.com/warbletech/warble-saas-marketplace) (app.warblecloud.com) | Commercial SaaS portal, Stripe subscriptions/financing, Murmuration checkout, and MCP credit metering | A Kubernetes operator runtime |
 | [warble-founders-gtm](https://github.com/warbletech/warble-founders-gtm) (warblecloud.com) | Founders Office GTM hub, Fitment Quiz & CFO ROI Calculator, battlecards, and launch playbooks | A cluster control plane |
 | [warble-harness](https://github.com/warbletech/warble-harness) on Rancher Desktop or k3s | Local Reflexion and Avirka loop | A customer cluster |
 | GitHub Actions | CI for warbletech repositories | A second required gate |
@@ -16,6 +16,21 @@ This repo clones the org and records where each platform runs. It does not creat
 | Dex | Sign-in. The issuer URL is set at install time and must match the UI | A hosted identity product on this repo |
 | Stripe | Payment only when a secret key and a price id are set outside this repo | A price list. This repo does not charge a card |
 | GitHub org and GitHub packages | Source, CI, and container packages | A second Git host. GitLab CE was removed from the control cluster on 14 October 2026 |
+
+
+## Infrastructure target matrix
+
+Kept in sync with `warble-idp-portal`, `warble-saas-marketplace`, and
+`warble-founders-gtm` (blueprint, runbooks, and marketplace ingress docs).
+Public DNS below was checked via Cloudflare DNS-over-HTTPS on 7 Nov 2026
+(Asia/Calcutta). This file does not create records or change the cluster.
+
+| Domain | Source repo | Documented binding | Public DNS (7 Nov 2026) |
+| --- | --- | --- | --- |
+| `idp.warblecloud.com` | [warble-idp-portal](https://github.com/warbletech/warble-idp-portal) | Ingress on `warble-byok` (namespace `warble-idp`). Sibling runbooks ask for a DNS-only A record to `35.190.63.216`. | No public A record yet |
+| `app.warblecloud.com` | [warble-saas-marketplace](https://github.com/warbletech/warble-saas-marketplace) | GCE Ingress `warble-saas-ip` = `35.190.63.216` on `warble-byok` (namespace `warble-saas`), DNS-only / grey cloud | `35.190.63.216` |
+| `warblecloud.com` | [warble-founders-gtm](https://github.com/warbletech/warble-founders-gtm) and the marketplace | Cloudflare-proxied commercial / GTM hub | `104.21.78.137`, `172.67.222.105` |
+| `dex.warblecloud.com` | Marketplace Dex (`warble-saas`) used by the portal as `DEX_ISSUER` | Sibling runbooks ask for a DNS-only A record to `35.190.63.216` | No public A record yet |
 
 ## Dex issuer
 
